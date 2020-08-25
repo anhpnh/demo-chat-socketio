@@ -18,13 +18,18 @@ io.on("connection", (socket) => {
 
   //client-gui-username
   socket.on("client-gui-username", (username) => {
-    if (mangUsersOnline.indexOf(username) >= 0) {
+    if (username === "") {
+      socket.emit("server-send-dangki-empty", "Vui long nhap username");
+    } else if (mangUsersOnline.indexOf(username) >= 0) {
       socket.emit("server-send-dangki-thatbai", username);
     } else {
       console.log("Co nguoi dang ki voi username la: " + username);
       mangUsersOnline.push(username);
       //server-send-dangki-thanhcong
-      io.sockets.emit("server-send-dangki-thanhcong", username);
+      io.sockets.emit("server-send-dangki-thanhcong", {
+        username: username,
+        id: socket.id,
+      });
     }
   });
 

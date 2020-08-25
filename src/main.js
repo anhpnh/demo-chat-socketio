@@ -5,8 +5,18 @@ $(document).ready(() => {
 
   //Dang ki username thanh cong
   socket.on("server-send-dangki-thanhcong", (data) => {
-    let s = "<div class='motUser'>" + data + "</div>";
+    let s =
+      "<div socketid='" +
+      data.id +
+      "' class='motUser'>" +
+      data.username +
+      "</div>";
     $("#danhSachUserOnline").append(s);
+  });
+
+  //Dang ki username = ""
+  socket.on("server-send-dangki-empty", (data) => {
+    alert(data);
   });
 
   //Dang ki username that bai
@@ -23,5 +33,6 @@ $(document).ready(() => {
   $("#btnDangki").click(() => {
     //client-gui-username
     socket.emit("client-gui-username", $("#txtUser").val());
+    $("#txtUser").val("");
   });
 });
