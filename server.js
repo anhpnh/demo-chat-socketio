@@ -10,8 +10,27 @@ let PORT = process.env.PORT || 3000;
 server.listen(PORT);
 console.log(`"Server started ${PORT}`);
 
+let mangUsersOnline = [];
 
+//client connect
+io.on("connection", (socket) => {
+  console.log("Client connected: " + socket.id);
 
+  //client-gui-username
+  socket.on("client-gui-username", (username) => {
+    if (mangUsersOnline.indexOf(username) >= 0) {
+      socket.emit("server-send-dangki-thatbai", username);
+    } else {
+      console.log("Co nguoi dang ki voi username la: " + username);
+      mangUsersOnline.push(username);
+    }
+  });
+
+  //client disconnect
+  socket.on("disconnect", () => {
+    console.log("Client disconnected: " + socket.id);
+  });
+});
 
 app.get("/", (req, res) => {
   res.render("trangchu");
