@@ -1,0 +1,51 @@
+#wrapper {
+  width: 600px;
+  margin: auto;
+}
+body {
+  background-color: #b5e1f7;
+}
+#left,
+#right {
+  min-height: 500px;
+  float: left;
+  margin-top: 5px;
+}
+
+#left {
+  width: 30%;
+  background-color: #f5f5d0;
+}
+#right {
+  width: 70%;
+  background-color: #acfaac;
+}
+.block {
+  width: 100%;
+  clear: both;
+}
+
+#txtMessage,
+#txtUser,
+#btnDangki,
+#btnChat {
+  float: left;
+  margin: 2px;
+  padding: 5px;
+}
+
+#txtMessage {
+  width: 70%;
+}
+#btnChat {
+  width: 24%;
+}
+#title {
+  background-color: #fab73b;
+  text-align: center;
+  padding: 6px;
+  font-weight: bold;
+}
+#header {
+  text-align: center;
+}
