@@ -3,6 +3,12 @@ let socket = io("/");
 $(document).ready(() => {
   console.log("Document ready!!!");
 
+  //Dang ki username thanh cong
+  socket.on("server-send-dangki-thanhcong", (data) => {
+    let s = "<div class='motUser'>" + data + "</div>";
+    $("#danhSachUserOnline").append(s);
+  });
+
   //Dang ki username that bai
   socket.on("server-send-dangki-thatbai", (username) => {
     alert(

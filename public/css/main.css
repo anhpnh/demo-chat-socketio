@@ -49,3 +49,8 @@ body {
 #header {
   text-align: center;
 }
+
+.motUser {
+  color: #1aa71a;
+  font-weight: bold;
+}

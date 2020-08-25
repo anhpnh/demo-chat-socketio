@@ -23,6 +23,8 @@ io.on("connection", (socket) => {
     } else {
       console.log("Co nguoi dang ki voi username la: " + username);
       mangUsersOnline.push(username);
+      //server-send-dangki-thanhcong
+      io.sockets.emit("server-send-dangki-thanhcong", username);
     }
   });
 
