@@ -1,5 +1,5 @@
 {
-  "name": "reactjs-demo",
+  "name": "demo-chat-socketio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anhpnh/reactjs-demo.git"
+    "url": "git+https://github.com/anhpnh/demo-chat-socketio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anhpnh/reactjs-demo/issues"
+    "url": "https://github.com/anhpnh/demo-chat-socketio/issues"
   },
-  "homepage": "https://github.com/anhpnh/reactjs-demo#readme",
+  "homepage": "https://github.com/anhpnh/demo-chat-socketio.git#readme",
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1"
