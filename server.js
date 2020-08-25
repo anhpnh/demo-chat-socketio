@@ -3,12 +3,16 @@ let app = express();
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", "./views");
-let port = 3000;
+let server = require("http").Server(app);
+let io = require("socket.io")(server);
+let PORT = process.env.PORT || 3000;
 
-app.listen(process.env.PORT || port);
-console.log("Server started: " + port);
+server.listen(PORT);
+console.log(`"Server started ${PORT}`);
+
+
 
 
 app.get("/", (req, res) => {
-    res.render("trangchu");
+  res.render("trangchu");
 });
