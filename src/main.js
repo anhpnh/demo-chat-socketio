@@ -2,6 +2,8 @@ let socket = io("/");
 
 $(document).ready(() => {
   console.log("Document ready!!!");
+  //hide divChatting
+  $("#divChatting").hide();
 
   //Dang ki username thanh cong
   socket.on("server-send-dangki-thanhcong", (data) => {
@@ -12,6 +14,15 @@ $(document).ready(() => {
       data.username +
       "</div>";
     $("#danhSachUserOnline").append(s);
+  });
+
+  //server-send-dangki-thanhcong-onlyuser
+  socket.on("server-send-dangki-thanhcong-onlyuser", () => {
+    
+    //show divChatting
+  $("#divChatting").show(1000);
+    //hide form dang ki
+    $("#divDangKi").hide(1000);
   });
 
   //Dang ki username = ""
